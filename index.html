@@ -27,16 +27,93 @@
             <div class="slides">
                 <section class="0-intro">
                     <section class="0-0-title">
+                        <h2>Privacy by Code</h2>
+                        <small>Userdaten respektieren: ein neuartiges Konzept</small>
+                        <aside class="notes">
+                            Hi, ich bin rixx, und hier geht es darum, wie man Privacy so
+                            tief wie möglich in Webanwendungen einbaut.
+                            Ich bin ein Webentwickler, und bilde mir (wie wir alle) ein,
+                            zu den Guten zu gehören. Das tut ihr vermutlich auch, schließlich
+                            sind wir ja bei der Privacy Week.
+
+                            Nur mal als Übersicht: Wer hier entwickelt Webanwendungen? [comment!]
+                            Wer hat direkten Einfluss auf die Entwicklung von Webanwendungen,
+                            als Projektleiterin, als Designerin, als Testerin, als Auftraggeberin?
+                        </aside>
                     </section>
                     <section class="0-0-intro">
+                        <aside class="notes">
+                        </aside>
                     </section>
                 </section>
                 <section class="1-concept">
-                    <section class="1-1-ressourcen">
+                    <section class="1-0-concept">
+                        <h3>Planung</h3>
+                        <aside class="notes">
+                            Weil wir das von Anfang an durchspielen, fangen wir auf der grünen
+                            Wiese an – hier entsteht eine neue Webanwendung, und diesmal machen
+                            wir *alles* richtig!
+                        </aside>
                     </section>
-                    <section class="1-2-datensparsamkeit">
+                    <section class="1-1-ressourcen">
+                        <h3>Ressourcen</h3>
+                        <ul>
+                            <li>W3C-Liste</li>
+                            <li>OWASP Top 10 Privacy Risks</li>
+                        </ul>
+                        <aside class="notes">
+                            Ressourcen zum Thema sind gar nicht so zahlreich, wie man es hofft
+                            oder denkt – am wegweisendsten sind die Listen der W3C und der OWASP
+                            zum Thema. Beide eignen sich hervorragend dazu, auch im laufenden
+                            Betrieb immer wieder durchgegangen zu werden. In den Ressourcen zum
+                            Talk werden beide verlinkt.
+                        </aside>
+                    </section>
+                    <section class="1-2a-grundsaetze">
+                        <aside class="notes">
+                            Unsere Ausgangslage ist diese: wir bauen und betreiben eine Webanwendung,
+                            die personenbezogene Daten ihrer Nutzerinnen vorhalten muss, sei es, weil
+                            die eben integral zur Funktion sind, oder rechtlich vorgehalten werden müssen.
+
+                            Wenn wir uns der Privatsphäre der Nutzerinnen verpflichtet sehen, ist unser
+                            Hauptziel in Hinblick auf diese Daten, Nutzerinnen einen mündigen und informierten
+                            Umgang mit ihren Daten freizugeben. Das schließt selbstverständlich auch an
+                            vorderster Front den Schutz dieser Daten vor Dritten ein.
+
+                            Das ungeschickte bei einer defensiven Ausgangslage wie dem Schutz von
+                            personenbezogenen Nutzerdaten ist, dass ein Fehler genügen kann, um alle anderen
+                            Maßnahmen und Sicherheitsschritte auszuhebeln.
+                        </aside>
+                    </section>
+                    <section class="1-2b-datensparsamkeit">
+                        <h3>Datensparsamkeit</h3>
+                        <aside class="notes">
+                            Die sichersten Daten sind die, die wir nicht haben – "Was gestrichen ist, kann
+                            nicht durchfallen".
+
+                            Datensparsamkeit ist der Grundsatz, den wir immer im Hinterkopf dabei haben sollten.
+                            Nur Daten anzufragen, oder jedenfalls nur *verpflichtend* anzufragen, die wir auch
+                            brauchen, klingt einfach – aber wer macht das? Als ich unlängst für einen Kinobesuch
+                            Karten im Netz bestellte, musste ich meinen Namen, meine Adresse, und mein 
+                            Geburtsdatum angeben – ja, bei der Kinoseite, nicht beim Zahlungsdienstleister –,
+                            um mein PDF-Ticket zu erhalten. So nicht.
+                        </aside>
                     </section>
                     <section class="1-3-datenmodell">
+                        <h3>Datenmodell</h3>
+                        <aside class="notes">
+                            Wir fangen brav damit an, uns nach der Anforderungsanalyse ein Datenmodell zu überlegen.
+                            Und hier legen wir schon fest, welche Daten wir haben müssen, in welchem Kontext, und
+                            wie lange. Das ist auch der Zeitpunkt, mit juristisch oder buchhalterisch gebildeten
+                            Menschen zu reden, um herauszufinden, welche Daten wir verpflichtet sind, zu halten,
+                            und welche Daten wir verpflichtet sind, zu löschen.
+
+                            Der zweite Teil beim Bauen des Datenmodells ist das frühe Berücksichtigen von Berechtigungen,
+                            Zugriffsrechten, Gruppenrechten, Scoping, etc. Wenn ihr erst jeder Zugriff auf alles, oder
+                            jeder nur Zugriff auf ihre eigenen Daten gebt, dann denkt zu diesem Zeitpunkt drüber nach,
+                            ob und wann ihr dieses Muster durchbrecht – im Rahmen von Gruppenrechten, oder teilbaren
+                            Inhalten, oder …
+                        </aside>
                     </section>
                     <section class="1-4-ui">
                     </section>
@@ -61,6 +138,20 @@
                     <section class="3-2-logging">
                     </section>
                     <section class="3-3-backups">
+                    </section>
+                    <section class="3-4-incidence-response">
+                        <h3>Incidence Response</h3>
+                        <small>… wenn's schief geht</small>
+                        <aside class="hooks">
+                            Und das wichtigste im laufenden Betrieb: Wenn alles schief
+                            gegangen ist, wenn die Daten geleaked sind, braucht es gute
+                            Incidence Response. Und die ist kein Zufall, die will vorbereitet
+                            sein.</br>
+
+                            Es braucht mindestens Ansprechpartner, eine Kontaktadresse, und
+                            definiertes Vorgehen in diversen Szenarien. Bitte, bitte, bitte,
+                            wenn ihr für eine Webanwendung mit Userdaten, die jetzt im Internet
+                            läuft, Verantwortung habt, und ihr habt kein
                     </section>
                 </section>
                 <section class="4-fin">
