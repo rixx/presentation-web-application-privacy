@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/reveal.css">
         <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
         <link rel="stylesheet" href="css/theme/blood.css">
+        <link rel="stylesheet" href="css/rixx.css">
 
         <!-- Theme used for syntax highlighting of code -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -30,19 +31,28 @@
                         <h2>Privacy by Code</h2>
                         <small>Userdaten respektieren: ein neuartiges Konzept</small>
                         <aside class="notes">
+                            <div class="block" style="margin-bottom: 8px;">
                             Hi, ich bin rixx, und hier geht es darum, wie man Privacy so
                             tief wie möglich in Webanwendungen einbaut.
                             Ich bin ein Webentwickler, und bilde mir (wie wir alle) ein,
                             zu den Guten zu gehören. Das tut ihr vermutlich auch, schließlich
                             sind wir ja bei der Privacy Week.
+                            </div>
 
-                            Nur mal als Übersicht: Wer hier entwickelt Webanwendungen? [comment!]
+                            <div class="block" style="margin-bottom: 8px;">
+                            Nur mal als Übersicht: Wer hier entwickelt Webanwendungen? [comment!]<br>
+                            </div>
                             Wer hat direkten Einfluss auf die Entwicklung von Webanwendungen,
                             als Projektleiterin, als Designerin, als Testerin, als Auftraggeberin?
                         </aside>
                     </section>
                     <section class="0-0-intro">
                         <aside class="notes">
+                            Wir stellen uns über die nächsten Minuten vor, wir würden eine Webanwendung bauen,
+                            und könnten das auf der völlig grünen Wiese tun. Wir gucken mal, wie wir eine
+                            Anwendung in allen ihren Aspekten planen, implementieren, und betreiben würden,
+                            wenn wir könnten, wie wir wollten.
+                            Dass das nie so passieren wird – völlig klar, und überhaupt nicht der Punkt.
                         </aside>
                     </section>
                 </section>
@@ -50,9 +60,12 @@
                     <section class="1-0-concept">
                         <h3>Planung</h3>
                         <aside class="notes">
-                            Weil wir das von Anfang an durchspielen, fangen wir auf der grünen
-                            Wiese an – hier entsteht eine neue Webanwendung, und diesmal machen
-                            wir *alles* richtig!
+                            Weil wir das von Anfang an durchspielen, fangen wir da an, wo wir gerade
+                            erst anfangen – hier entsteht eine neue Webanwendung, und diesmal machen
+                            wir *alles* richtig! <br>
+
+                            Zuerst sehen wir uns nach Ressourcen um, die uns in die richtige
+                            Richtung schieben.
                         </aside>
                     </section>
                     <section class="1-1-ressourcen">
@@ -73,12 +86,12 @@
                         <aside class="notes">
                             Unsere Ausgangslage ist diese: wir bauen und betreiben eine Webanwendung,
                             die personenbezogene Daten ihrer Nutzerinnen vorhalten muss, sei es, weil
-                            die eben integral zur Funktion sind, oder rechtlich vorgehalten werden müssen.
+                            die eben integral zur Funktion sind, oder rechtlich vorgehalten werden müssen.<br>
 
                             Wenn wir uns der Privatsphäre der Nutzerinnen verpflichtet sehen, ist unser
                             Hauptziel in Hinblick auf diese Daten, Nutzerinnen einen mündigen und informierten
                             Umgang mit ihren Daten freizugeben. Das schließt selbstverständlich auch an
-                            vorderster Front den Schutz dieser Daten vor Dritten ein.
+                            vorderster Front den Schutz dieser Daten vor Dritten ein.<br>
 
                             Das ungeschickte bei einer defensiven Ausgangslage wie dem Schutz von
                             personenbezogenen Nutzerdaten ist, dass ein Fehler genügen kann, um alle anderen
@@ -116,28 +129,102 @@
                         </aside>
                     </section>
                     <section class="1-4-ui">
+                        <h3>User Interface</h3>
+                        <div class="quote fragment">
+                        »Ganz zuunterst in einem verschlossenen Aktenschrank in einem unbenutzten Klo, an dessen Tür stand: Vorsichtl Bissiger Leopard!«
+                        </div>
+                        <aside class="notes">
+                            Wir betreiben den ganzen Spaß ja zum Wohl und Schutz unserer Nutzerinnen – das heißt, die
+                            UI hat eine ganz zentrale Rolle. Wenn die Kontrollmöglichkeit über die freigegebenen Daten
+                            im unbeleuchteten Keller jenseits der kaputten Treppe in einem verschlossenen Aktenschrank
+                            in einem Sanitärraum, der mutmaßlich … gelagert wird, dann führt das nicht zum mündigen
+                            Umgang mit den eigenen Daten. Und was ist das Äquivalent dieses Kellerraums?
+                        </aside>
+                    </section>
+                    <section class="1-4b-ui">
+                        <h3>User Interface</h3>
+                        <img data-src="/img/agree.png" />
+                        <aside class="notes">
+                            Klärt eure User zur passenden Zeit, im passenden Kontext über den Umfang der benötigten, und der
+                            darüber hinaus gewünschten Zustimmung auf. Informierte, spezifische Einwilligung ist das Ziel.
+                            Weniger "Jaja, du hast die Privacy Policy gelesen" und mehr "Wir halten deine Adresse für sechs
+                            Monate vor, zwecks Rücksendungen etc. Klick hier, um sie uns noch länger zwecks Zusendung von
+                            Katalogen speichern zu lassen."
+
+                            Daneben braucht es einen Überblick über die gegebenen Einwilligungen, und auch die bitte nicht
+                            in einem versteckten Kellerloch. Gegebene Einwilligungen müssen sich annehmen und ändern lassen.
+                            Das involviert natürlich auch, dass ihr euch überlegt, was überhaupt passieren muss, wenn eine
+                            Nutzerin eine spezifische Einwilligung in Datennutzung oder -speicherung widerruft.
+
+                            Am besten wird natürlich auch dieser Überblick über die Einwilligungen kontextualisiert, und zwar
+                            am besten durch die tatsächlichen Daten. "Wir haben diese Adresse noch für x Monate vorliegen.
+                            Klick hier zum Widerruf, und hier zur Korrektur der Adresse."
+                        </aside>
                     </section>
                     <section class="1-5-datenbrief">
+                        <h3>Bonus: Datenbrief</h3>
+                        <aside class="notes">
+                            Der Absolute Goldstern in Sachen Transparenz geht hier an diejenigen, die einen regelmäßigen
+                            Datenbrief verschicken. Der Datenbrief weist die Empfängerinnen auf die Existenz der vorgehaltenen
+                            Daten hin – da ihr ja eh schon eine Webanwendung am Start habt, verweist ihr allerdings am besten
+                            nur auf eine Übersichtseite, um diese sensiblen Informationen nicht im Klartext übers Netz zu jagen.
+
+                            Der Datenbrief klingt erst einmal wie eine Einladung, damit Leute ihre Accounts unbesehen löschen,
+                            aber so ist das gar nicht: Das lässt sich sehr positiv als "Lange nichts mehr gehört, sind deine
+                            Daten überhaupt noch korrekt?" formulieren.
+                        </aside>
+                    </section>
+                    <section class="1-5-datenbrief">
+                        <aside class="notes">
+                            Das war es von der Planung der Software. Wie schon eingangs erwähnt – das hier ist natürlich das
+                            nie eintretende optimistische Szenario der völlig grünen Wiese mit absoluter Handlungsfreiheit.
+                            Ich erwarte gar nicht, dass hier jemand raus geht, und das so umsetzt – aber vielleicht doch
+                            den einen oder anderen Punkt.
+                        </aside>
                     </section>
                 </section>
                 <section class="2-implementation">
                     <section class="2-1-best-practice">
+                        <h3>Datenmodell</h3>
+                        <aside class="notes">
+                        </aside>
                     </section>
                     <section class="2-2-backend">
+                        <h3>Datenmodell</h3>
+                        <aside class="notes">
+                        </aside>
                     </section>
                     <section class="2-3-frontend">
+                        <h3>Datenmodell</h3>
+                        <aside class="notes">
+                        </aside>
                     </section>
                     <section class="2-4-issues">
+                        <h3>Datenmodell</h3>
+                        <aside class="notes">
+                        </aside>
                     </section>
                     <section class="2-5-tests">
+                        <h3>Datenmodell</h3>
+                        <aside class="notes">
+                        </aside>
                     </section>
                 </section>
                 <section class="3-operation">
                     <section class="3-1-monitoring">
+                        <h3>Datenmodell</h3>
+                        <aside class="notes">
+                        </aside>
                     </section>
                     <section class="3-2-logging">
+                        <h3>Datenmodell</h3>
+                        <aside class="notes">
+                        </aside>
                     </section>
                     <section class="3-3-backups">
+                        <h3>Datenmodell</h3>
+                        <aside class="notes">
+                        </aside>
                     </section>
                     <section class="3-4-incidence-response">
                         <h3>Incidence Response</h3>
@@ -155,6 +242,9 @@
                     </section>
                 </section>
                 <section class="4-fin">
+                        <h3>Datenmodell</h3>
+                        <aside class="notes">
+                        </aside>
                 </section>
             </div>
         </div>
