@@ -107,7 +107,7 @@
                             Datensparsamkeit ist der Grundsatz, den wir immer im Hinterkopf dabei haben sollten.
                             Nur Daten anzufragen, oder jedenfalls nur *verpflichtend* anzufragen, die wir auch
                             brauchen, klingt einfach – aber wer macht das? Als ich unlängst für einen Kinobesuch
-                            Karten im Netz bestellte, musste ich meinen Namen, meine Adresse, und mein 
+                            Karten im Netz bestellte, musste ich meinen Namen, meine Adresse, und mein
                             Geburtsdatum angeben – ja, bei der Kinoseite, nicht beim Zahlungsdienstleister –,
                             um mein PDF-Ticket zu erhalten. So nicht.
                         </aside>
@@ -119,7 +119,9 @@
                             Und hier legen wir schon fest, welche Daten wir haben müssen, in welchem Kontext, und
                             wie lange. Das ist auch der Zeitpunkt, mit juristisch oder buchhalterisch gebildeten
                             Menschen zu reden, um herauszufinden, welche Daten wir verpflichtet sind, zu halten,
-                            und welche Daten wir verpflichtet sind, zu löschen.
+                            und welche Daten wir verpflichtet sind, zu löschen. Baut auch hier gleich Prozesse
+                            zur rechtzeitigen Löschung von nicht mehr benötigten Daten ein. Beschäftigt euch mit der
+                            EUDGV.
 
                             Der zweite Teil beim Bauen des Datenmodells ist das frühe Berücksichtigen von Berechtigungen,
                             Zugriffsrechten, Gruppenrechten, Scoping, etc. Wenn ihr erst jeder Zugriff auf alles, oder
@@ -185,28 +187,142 @@
                 </section>
                 <section class="2-implementation">
                     <section class="2-1-best-practice">
-                        <h3>Datenmodell</h3>
+                        <h3>Best Practice</h3>
+                        <ul>
+                            <li class="fragment">
+                                Externe Inhalte minimieren
+                            </li>
+                            <li class="fragment">
+                                Bibliotheken verantwortlich nutzen
+                            </li>
+                        </ul>
                         <aside class="notes">
+                            Bei der Umsetzung gibt es natürlich auch eine Reihe Dinge zu beachten.
+                            Allgemeine Best Practices zwei etwas gegenläufige Konzepte:
+
+                            Zum einen solltet ihr auf externe Inhalte soweit wie möglich verzichten.
+                            Das trifft besonders Frontend-Assets: es gibt 2017 keinen wirklichen Grund außer Faulheit mehr, seine
+                            Schriften von fonts.gstatic und seine JavaScript-Bibliothken von MaxCDN zu laden. Das verteilt völlig
+                            ohne Anlass Informationen an Dritte weiter, die weder mit euch noch mit euren Nutzerinnen zu tun
+                            haben sollten.
+
+                            Das zweite Konzept hört sich fast (aber nur fast ;)) widersprüchlich dazu an, nämlich: Verwendet
+                            Bibliotheken, wo es angemessen ist. Klar, Bibliotheken sind auch externe Inhalte, aber oft gute
+                            und nützliche: Da haben sich Leute oft über Jahre Gedanken und Mühe gemacht, und haben Fehlerberichte
+                            und Hilfe anderer eingesammelt – es ist davon auszugehen, dass ihr kritische Funktionalität nicht
+                            aus dem Stegreif besser oder gar fehlerfrei hinbekommt. Bibliotheken sind immer Abwägungssache und
+                            ihr solltet selbstverständlich nichts ohne vorherige Recherche nutzen – das ist immerhin Code, den
+                            ihr in eurem Projekt ausführt!
+                            Und: Legt eigene Kopien/Forks/whatever von diesen Bibliotheken an, und nutzt fixe Versionen.
                         </aside>
                     </section>
                     <section class="2-2-backend">
-                        <h3>Datenmodell</h3>
+                        <h3>Backend</h3>
+                        <ul>
+                            <li class="fragment">
+                                Graceful Degradation
+                            </li>
+                            <li class="fragment">
+                                Scoped Access
+                            </li>
+                            <li class="fragment">
+                                Logging
+                            </li>
+                        </ul>
                         <aside class="notes">
+                            Backend-spezifische Implementierungskonzepte befassen sich vor allem damit, nicht versehentlich
+                            Daten anzuzeigen, die nicht angezeigt werden sollten.
+
+                            Dazu gehört zu allererst: Graceful Degradation. Wenn Fehler auftreten, fangt sie ab. Und leitet auf
+                            gar keinen Fall Serverfehler, am Ende gar Stack-Traces an die Nutzerinnen, egal wie schlimm der Server
+                            kaputt geht. Stacktraces sind nie für Nutzeraugen bestimmt. Rechnet *immer* damit, dass es aufgrund
+                            von Fehlern im Code oder den Eingabedaten zu Problemen kommen kann, und misstraut dabei natürlich
+                            ganz besonders allen Nutzereingaben.
+
+                            Als zweite Hilfe gegen die Ausgabe von Daten, wo sie nicht hingehören, verwendet ihr im Backend
+                            so viel, so früh, und so ausufernd wie möglich sogenannten Scoped Data Access einzusetzen. Das
+                            bedeutet: so früh wie möglich die Daten einschränken, auf denen gearbeitet wird. Zu Beginn im
+                            üblichen Request-Response-Zyklus ist ja der angemeldete Useraccount bekannt – ab diesem Zeitpunkt
+                            kann also das Datenset, auf dem gearbeitet wird, auf der Nutzerin zugängliche Daten reduziert werden.
+
+                            Und: Loggt! Loggt natürlich alles, was ihr ohnehin an buchungsrelevanten Daten loggen müsst.
+                            Loggt aber auch Zugriffe auf sensible Daten. Wenn ihr die Zeit habt, da dann noch nachträglich
+                            nach auffälligen Zugriffen zu gucken, ist das natürlich optimal, aber selbst wenn ihr nur nach
+                            einem Breach oder dem Fund eines Bugs gucken könnt, ob eine Lücke ausgenutzt wurde, habt ihr viel
+                            gewonnen.
                         </aside>
                     </section>
                     <section class="2-3-frontend">
-                        <h3>Datenmodell</h3>
+                        <h3>Fontend</h3>
+                        <ul>
+                            <li class="fragment">
+
+                            </li>
+                            <li class="fragment">
+                                Scoped Access
+                            </li>
+                        </ul>
                         <aside class="notes">
+                            In Sachen Fontendentwicklung werdet ihr natürlich die Implementierungskonzepte in Sachen reduzierte
+                            Datenanfragen und klare Einwilligung in Datennutzung umsetzen müssen. Zur Hilfe gibt es da aber auch
+                            ein, zwei Regeln, die man vage im Hinterkopf behalten kann.
+
+                            Zum Einen: fragt nicht an Stellen um Erlaubnis, an denen ihr das nicht müsst, an denen es nichts
+                            zur Information beiträgt, oder an denen ein Opt-In verpflichtend ist. Gestaltet solche Situationen
+                            entweder informativ ("Diese Adresse werden wir x Monate aufbewahren") oder bietet *echte* Alternativen
+                            an. Nervt auch die Nutzerinnen weniger.
+
+                            Zweitens: Fragt so spät wie möglich nach Inputs, und stellt sehr klar hin, welche davon benötigt sind.
+                            Das ist auch für die Bedienbarkeit ein deutlicher Gewinn – ich bleibe einer Webseite deutlich geneigter,
+                            wenn sie mich nicht als allererstes nach meiner Adresse, meinem Geburtsdatum, und meinen Hausschlüsseln
+                            fragt und mich informiert, dass ich ihre Privacy Policy sicher gelesen habe.
+                            (Und natürlich *ist* sie ein Date, denn jede Webanwendung löst ja am Ende ein soziales Problem.)
                         </aside>
                     </section>
                     <section class="2-4-issues">
-                        <h3>Datenmodell</h3>
+                        <h3>Häufige Fehler</h3>
                         <aside class="notes">
+                            Als allererstes möchte ich euch darauf aufmerksam machen, dass ich nicht den xkcd "Little Bobby Tables"
+                            zu SQL-Injections zeige – aber natürlich geht es hier um genau solche Fehler. Ich möchte das hier
+                            kurz halten und euch hier die Tob-10 OWASP-Liste ans Herz legen. Geht sie regelmäßig durch, prüft eure
+                            Anwendung, und findet für jeden der Punkte konzeptuelle Gegenstrategien. 2017 sollte keine Webanwendung
+                            mehr mit Injections, Cross-Site-Scripting, enumerierbaren privaten Daten, etc abgeben müssen.
+                            Zu den häufigen Fehlern gehört übrigens auch ein zu hoher Session-Timeout – deutlich weniger oft
+                            angemahnt, und deshalb weniger präsent.
                         </aside>
                     </section>
                     <section class="2-5-tests">
-                        <h3>Datenmodell</h3>
+                        <h3>Tests</h3>
+                        <ul>
+                            <li class="fragment">
+                                Testet Code
+                            </li>
+                            <li class="fragment">
+                                Testet automatisch
+                            </li>
+                            <li class="fragment">
+                                Testet mehr
+                            </li>
+                            <li class="fragment">
+                                Testet durch Externe
+                            </li>
+                        </ul>
                         <aside class="notes">
+                            Tests. Eine Webanwendung von nicht komplett trivialer Größe ohne Tests zu bauen, ist sträflich nachlässig.
+                            Schreibt Tests, und schreibt sie von Anfang an. Guckt euch gelegentlich an, wie hoch eure Test Coverage ist
+                            (also wie viele Codezeilen getestet sind), aber seid euch bewusst, dass das eine sehr simple und nachlässige
+                            Metrik ist.
+
+                            Lasst eure Tests automatisch laufen, und ignoriert die Ergebnisse nicht. Wenn die Tests rot werden, dann
+                            repariert sie oder – wenn das gerade nicht geht – markiert sie als beabsichtigte Fehler. Nichts ist nutzloser
+                            als eine Testsuite, deren Ergebnisse nicht mehr angesehen werden, weil man ja weiß, warum sie rot ist.
+
+                            Testet mit Unittests für einzelne Funktionen, und Integrationstests für ganze Features und Abläufe.
+                            Testet ganz besonders Zugriffsberechtigungen! Falls es mit eurer Sprache, eurem Framework, … machbar ist,
+                            beschäftigt euch mal mit automatisiertem Abklopfen eures Codes durch externe Tools.
+
+                            Und wo wir bei Externen sind: Wenn es irgendwie machbar ist, besorgt euch einen Pentest von Profis. Nichts
+                            ersetzt frische Augen von Menschen, die ihr Geld damit machen, Sicherheitslücken in eurer Software zu finden.
                         </aside>
                     </section>
                 </section>
