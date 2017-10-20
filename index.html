@@ -327,39 +327,96 @@
                     </section>
                 </section>
                 <section class="3-operation">
-                    <section class="3-1-monitoring">
-                        <h3>Datenmodell</h3>
+                    <section class="3-0-betrieb">
+                        <h2>Betrieb</h2>
                         <aside class="notes">
+                            Nun ist es ja leider mit dem Implementieren nicht getan – selbst wenn die Implementierung super ist, haben
+                            wir jetzt Jahre Zeit, alles ausdauernd wieder einzureißen, denn zum Lebenszyklus einer Webanwendung gehört
+                            ja zum allergrößten Teil (wenn man nicht nur so ein One-Click-Wonder ist) der Betrieb und die Wartung.
+
+                            Von Dingen, die da schief gehen, liest man ja monatlich in den Nachrichten – selten heißt es da "die
+                            Anwendung war schlecht konzipiert", viel häufiger heißt es "Die Datenbank war mit den Credentials admin/admin
+                            zugänglich". Was tun?
+                        </aside>
+                    </section>
+                    <section class="3-1-monitoring">
+                        <h3>Monitoring</h3>
+                        <aside class="notes">
+                            Als fast dringendes braucht ihr gutes Monitoring. Monitoring in irgendeiner Form habt ihr ja schon,
+                            nicht wahr? Und wenn es nur eure Uptime und den verfügbaren Plattenspeicher ansieht (hach, icinga-Templates).
+                            Nutzt die Gelegenheit, noch viel mehr Dinge zu prüfen. Prüft, ob euer HTTPS tut, das Zertifikat aktuell
+                            ist, die korrekten Versionen und Ciphers angeboten werden.
+
+                            Prüft, dass nur die wirklich nötigen Ports des Servers offen sind. Macht euch in dem Zug gleich mit
+                            den Best Practices des Server-Hardenings vertraut.
+
+                            Prüft, dass kritische Systeminfrastruktur aktuell ist.
+
+                            Prüft, dass ihr TLS wirklich überall verwendet – HTTPS überall zu nutzen sollte Standard sein, aber
+                            kommunizieren z.B. eure Websockets auch verschlüsselt?
                         </aside>
                     </section>
                     <section class="3-2-logging">
-                        <h3>Datenmodell</h3>
+                        <h3>Logging</h3>
                         <aside class="notes">
+                            Loggt Zugriffe auf sensible Daten. Loggt logins. Selbst wenn ihr diese Logs nur nach einem Vorfall nutzt,
+                            um die Vorgänge nachzuvollziehen, habt ihr viel zu tun, verglichen mit einem Vorfall, nach dem ihr
+                            völlig im Dunklen tappt, was da auf euren Servern los war.
+                            Und sichert die relevanten Logs, ganz besonders auch die Logs, die eure Webanwendung ohnehin ausspuckt!
                         </aside>
                     </section>
                     <section class="3-3-backups">
-                        <h3>Datenmodell</h3>
+                        <h3>Backups</h3>
                         <aside class="notes">
+                            Woooomit wir beim spannendsten Thema überhaupt ankommen: Backups! Ihr macht ja alle Backups, regelmäßig,
+                            und testet sicherlich auch eure Restore-Prozeduren, nicht wahr? Ihr wisst ja, ein Backup ohne Restore
+                            ist ein Scherbenhaufen aus Bits, mehr nicht. Über solche Grundlagen muss man ja quasi nicht reden.
+
+                            Seid euch immer dessen bewusst, dass eure Backupdaten *mindestens* so sicherheitskritisch sind, wie eure
+                            Live-Datenbank. Das bedeutet: Alles, was wir über den Anwendungsserver gesagt haben, gilt auch für eure
+                            Backup-Server. (Plural. Stimmts?). Sichert den so hart ab, wie ihr es irgend könnt. Wenn da jemand unbefugt
+                            drauf zugreift, habt ihr ziemlich verloren. Wenn eure Backups da dann noch unverschlüsselt liegen …
+
+                            Und entsprechend muss übrigens auch der Kanal zwischen eurem Anwendungsserver und euren Backupservern
+                            gesichert ist, unter SSH/TLS solltet ihr da gar nicht anfangen (im besten Fall steht da natürlich ein VPN).
                         </aside>
                     </section>
                     <section class="3-4-incidence-response">
                         <h3>Incidence Response</h3>
                         <small>… wenn's schief geht</small>
                         <aside class="hooks">
-                            Und das wichtigste im laufenden Betrieb: Wenn alles schief
-                            gegangen ist, wenn die Daten geleaked sind, braucht es gute
-                            Incidence Response. Und die ist kein Zufall, die will vorbereitet
-                            sein.</br>
+                            Und das wichtigste im laufenden Betrieb: Wenn alles schief gegangen ist, wenn die Daten geleaked
+                            sind, braucht es gute Incidence Response. Und die ist kein Zufall, die will vorbereitet sein.
 
-                            Es braucht mindestens Ansprechpartner, eine Kontaktadresse, und
-                            definiertes Vorgehen in diversen Szenarien. Bitte, bitte, bitte,
-                            wenn ihr für eine Webanwendung mit Userdaten, die jetzt im Internet
-                            läuft, Verantwortung habt, und ihr habt kein
+                            Habt ihr schon mal bei einer Website nach deren Datenschutz gefragt? Oder einen Vorfall gemeldet?
+                            Das ist meist … gar kein so leichtes Unterfangen. Wenn man sich an den Support wendet, wird man
+                            im besten Fall weitergereicht, aber im Normalfall passiert eher nichts.
+
+                            In meiner Erfahrung funktionieren Adressen wie webmaster@, root@, admin@ ganz gut. Dazu sollte man
+                            seine Meldung natürlich noch gelassen, sachlich und nicht konfrontativ formulieren. Wer mit
+                            "Einmal mit Profis ey, was könnt ihr eigentlich?" angeschrieben wird, kooperiert eher weniger.
+                            Wer hätts gedacht.
+
+                            Es braucht mindestens Ansprechpartner, eine Kontaktadresse, und definiertes Vorgehen in diversen
+                            Szenarien. Bitte, bitte, bitte, wenn ihr für eine Webanwendung mit Userdaten, die jetzt im Internet
+                            läuft, Verantwortung habt, und ihr habt kein Vorgehen für Vorfälle, bei denen euch Daten abhanden
+                            gekommen sind – schafft sie jetzt.
+
+                            Wie für alle Teile des Vortrags gibt es da Best Practices, die hier aufzuführen ausarten würde.
+                            Aber am wichtigsten: ihr macht euch Gedanken drum. Bitte.
                     </section>
                 </section>
                 <section class="4-fin">
-                        <h3>Datenmodell</h3>
+                        <h3>Fin.</h3>
                         <aside class="notes">
+                            So, das wars – wir sind einmal durch alles, was zur Planung, Implementierung und dem Betrieb einer
+                            Webanwendung hinsichtlich des Datenschutzes gehört.
+
+                            Das ist natürlich gelogen, wir haben grad erst an der Oberfläche gekratzt, aber wie geschrieben
+                            steht: »Er hat sich im Rahmen seiner Möglichkeiten bemüht.«
+
+                            Ich hoffe, ihr nehmt hiervon wenigstens einen oder zwei Punkte mit, und macht das Internet zu einem
+                            etwas besseren Ort.
                         </aside>
                 </section>
             </div>
