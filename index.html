@@ -31,28 +31,33 @@
                         <h2>Privacy by Code</h2>
                         <small>Userdaten respektieren: ein neuartiges Konzept</small>
                         <aside class="notes">
-                            <div class="block" style="margin-bottom: 8px;">
+                            <p>
                             Hi, ich bin rixx, und hier geht es darum, wie man Privacy so
                             tief wie möglich in Webanwendungen einbaut.
                             Ich bin ein Webentwickler, und bilde mir (wie wir alle) ein,
                             zu den Guten zu gehören. Das tut ihr vermutlich auch, schließlich
                             sind wir ja bei der Privacy Week.
-                            </div>
-
-                            <div class="block" style="margin-bottom: 8px;">
+                            </p>
+                            <p>
                             Nur mal als Übersicht: Wer hier entwickelt Webanwendungen? [comment!]<br>
-                            </div>
+                            </p>
+                            <p>
                             Wer hat direkten Einfluss auf die Entwicklung von Webanwendungen,
                             als Projektleiterin, als Designerin, als Testerin, als Auftraggeberin?
+                            </p>
                         </aside>
                     </section>
                     <section class="0-0-intro">
                         <aside class="notes">
+                            <p>
                             Wir stellen uns über die nächsten Minuten vor, wir würden eine Webanwendung bauen,
                             und könnten das auf der völlig grünen Wiese tun. Wir gucken mal, wie wir eine
                             Anwendung in allen ihren Aspekten planen, implementieren, und betreiben würden,
                             wenn wir könnten, wie wir wollten.
+                            </p>
+                            <p>
                             Dass das nie so passieren wird – völlig klar, und überhaupt nicht der Punkt.
+                            </p>
                         </aside>
                     </section>
                 </section>
@@ -60,12 +65,16 @@
                     <section class="1-0-concept">
                         <h3>Planung</h3>
                         <aside class="notes">
+                            <p>
                             Weil wir das von Anfang an durchspielen, fangen wir da an, wo wir gerade
                             erst anfangen – hier entsteht eine neue Webanwendung, und diesmal machen
                             wir *alles* richtig! <br>
+                            </p>
+                            <p>
 
                             Zuerst sehen wir uns nach Ressourcen um, die uns in die richtige
                             Richtung schieben.
+                            </p>
                         </aside>
                     </section>
                     <section class="1-1-ressourcen">
@@ -75,34 +84,45 @@
                             <li>OWASP Top 10 Privacy Risks</li>
                         </ul>
                         <aside class="notes">
+                            <p>
                             Ressourcen zum Thema sind gar nicht so zahlreich, wie man es hofft
                             oder denkt – am wegweisendsten sind die Listen der W3C und der OWASP
                             zum Thema. Beide eignen sich hervorragend dazu, auch im laufenden
                             Betrieb immer wieder durchgegangen zu werden. In den Ressourcen zum
                             Talk werden beide verlinkt.
+                            </p>
                         </aside>
                     </section>
                     <section class="1-2a-grundsaetze">
                         <aside class="notes">
+                            <p>
                             Unsere Ausgangslage ist diese: wir bauen und betreiben eine Webanwendung,
                             die personenbezogene Daten ihrer Nutzerinnen vorhalten muss, sei es, weil
                             die eben integral zur Funktion sind, oder rechtlich vorgehalten werden müssen.<br>
+                            </p>
+                            <p>
 
                             Wenn wir uns der Privatsphäre der Nutzerinnen verpflichtet sehen, ist unser
                             Hauptziel in Hinblick auf diese Daten, Nutzerinnen einen mündigen und informierten
                             Umgang mit ihren Daten freizugeben. Das schließt selbstverständlich auch an
                             vorderster Front den Schutz dieser Daten vor Dritten ein.<br>
+                            </p>
+                            <p>
 
                             Das ungeschickte bei einer defensiven Ausgangslage wie dem Schutz von
                             personenbezogenen Nutzerdaten ist, dass ein Fehler genügen kann, um alle anderen
                             Maßnahmen und Sicherheitsschritte auszuhebeln.
+                            </p>
                         </aside>
                     </section>
                     <section class="1-2b-datensparsamkeit">
                         <h3>Datensparsamkeit</h3>
                         <aside class="notes">
+                            <p>
                             Die sichersten Daten sind die, die wir nicht haben – "Was gestrichen ist, kann
                             nicht durchfallen".
+                            </p>
+                            <p>
 
                             Datensparsamkeit ist der Grundsatz, den wir immer im Hinterkopf dabei haben sollten.
                             Nur Daten anzufragen, oder jedenfalls nur *verpflichtend* anzufragen, die wir auch
@@ -110,11 +130,13 @@
                             Karten im Netz bestellte, musste ich meinen Namen, meine Adresse, und mein
                             Geburtsdatum angeben – ja, bei der Kinoseite, nicht beim Zahlungsdienstleister –,
                             um mein PDF-Ticket zu erhalten. So nicht.
+                            </p>
                         </aside>
                     </section>
                     <section class="1-3-datenmodell">
                         <h3>Datenmodell</h3>
                         <aside class="notes">
+                            <p>
                             Wir fangen brav damit an, uns nach der Anforderungsanalyse ein Datenmodell zu überlegen.
                             Und hier legen wir schon fest, welche Daten wir haben müssen, in welchem Kontext, und
                             wie lange. Das ist auch der Zeitpunkt, mit juristisch oder buchhalterisch gebildeten
@@ -122,66 +144,84 @@
                             und welche Daten wir verpflichtet sind, zu löschen. Baut auch hier gleich Prozesse
                             zur rechtzeitigen Löschung von nicht mehr benötigten Daten ein. Beschäftigt euch mit der
                             EUDGV.
+                            </p>
+                            <p>
 
                             Der zweite Teil beim Bauen des Datenmodells ist das frühe Berücksichtigen von Berechtigungen,
                             Zugriffsrechten, Gruppenrechten, Scoping, etc. Wenn ihr erst jeder Zugriff auf alles, oder
                             jeder nur Zugriff auf ihre eigenen Daten gebt, dann denkt zu diesem Zeitpunkt drüber nach,
                             ob und wann ihr dieses Muster durchbrecht – im Rahmen von Gruppenrechten, oder teilbaren
                             Inhalten, oder …
+                            </p>
+                            <p>
                         </aside>
                     </section>
                     <section class="1-4-ui">
                         <h3>User Interface</h3>
                         <div class="quote fragment">
-                        »Ganz zuunterst in einem verschlossenen Aktenschrank in einem unbenutzten Klo, an dessen Tür stand: Vorsichtl Bissiger Leopard!«
+                        »Ganz zuunterst in einem verschlossenen Aktenschrank in einem unbenutzten Klo, an dessen Tür stand: Vorsicht! Bissiger Leopard!«
                         </div>
                         <aside class="notes">
+                            <p>
                             Wir betreiben den ganzen Spaß ja zum Wohl und Schutz unserer Nutzerinnen – das heißt, die
                             UI hat eine ganz zentrale Rolle. Wenn die Kontrollmöglichkeit über die freigegebenen Daten
                             im unbeleuchteten Keller jenseits der kaputten Treppe in einem verschlossenen Aktenschrank
                             in einem Sanitärraum, der mutmaßlich … gelagert wird, dann führt das nicht zum mündigen
                             Umgang mit den eigenen Daten. Und was ist das Äquivalent dieses Kellerraums?
+                            </p>
                         </aside>
                     </section>
                     <section class="1-4b-ui">
                         <h3>User Interface</h3>
                         <img data-src="/img/agree.png" />
                         <aside class="notes">
+                            <p>
                             Klärt eure User zur passenden Zeit, im passenden Kontext über den Umfang der benötigten, und der
                             darüber hinaus gewünschten Zustimmung auf. Informierte, spezifische Einwilligung ist das Ziel.
                             Weniger "Jaja, du hast die Privacy Policy gelesen" und mehr "Wir halten deine Adresse für sechs
                             Monate vor, zwecks Rücksendungen etc. Klick hier, um sie uns noch länger zwecks Zusendung von
                             Katalogen speichern zu lassen."
+                            </p>
+                            <p>
 
                             Daneben braucht es einen Überblick über die gegebenen Einwilligungen, und auch die bitte nicht
                             in einem versteckten Kellerloch. Gegebene Einwilligungen müssen sich annehmen und ändern lassen.
                             Das involviert natürlich auch, dass ihr euch überlegt, was überhaupt passieren muss, wenn eine
                             Nutzerin eine spezifische Einwilligung in Datennutzung oder -speicherung widerruft.
+                            </p>
+                            <p>
 
                             Am besten wird natürlich auch dieser Überblick über die Einwilligungen kontextualisiert, und zwar
                             am besten durch die tatsächlichen Daten. "Wir haben diese Adresse noch für x Monate vorliegen.
                             Klick hier zum Widerruf, und hier zur Korrektur der Adresse."
+                            </p>
                         </aside>
                     </section>
                     <section class="1-5-datenbrief">
                         <h3>Bonus: Datenbrief</h3>
                         <aside class="notes">
+                            <p>
                             Der Absolute Goldstern in Sachen Transparenz geht hier an diejenigen, die einen regelmäßigen
                             Datenbrief verschicken. Der Datenbrief weist die Empfängerinnen auf die Existenz der vorgehaltenen
                             Daten hin – da ihr ja eh schon eine Webanwendung am Start habt, verweist ihr allerdings am besten
                             nur auf eine Übersichtseite, um diese sensiblen Informationen nicht im Klartext übers Netz zu jagen.
+                            </p>
+                            <p>
 
                             Der Datenbrief klingt erst einmal wie eine Einladung, damit Leute ihre Accounts unbesehen löschen,
                             aber so ist das gar nicht: Das lässt sich sehr positiv als "Lange nichts mehr gehört, sind deine
                             Daten überhaupt noch korrekt?" formulieren.
+                            </p>
                         </aside>
                     </section>
                     <section class="1-5-datenbrief">
                         <aside class="notes">
+                            <p>
                             Das war es von der Planung der Software. Wie schon eingangs erwähnt – das hier ist natürlich das
                             nie eintretende optimistische Szenario der völlig grünen Wiese mit absoluter Handlungsfreiheit.
                             Ich erwarte gar nicht, dass hier jemand raus geht, und das so umsetzt – aber vielleicht doch
                             den einen oder anderen Punkt.
+                            </p>
                         </aside>
                     </section>
                 </section>
@@ -197,15 +237,20 @@
                             </li>
                         </ul>
                         <aside class="notes">
+                            <p>
                             Bei der Umsetzung gibt es natürlich auch eine Reihe Dinge zu beachten.
                             Allgemeine Best Practices zwei etwas gegenläufige Konzepte:
 
+                            </p>
+                            <p>
                             Zum einen solltet ihr auf externe Inhalte soweit wie möglich verzichten.
                             Das trifft besonders Frontend-Assets: es gibt 2017 keinen wirklichen Grund außer Faulheit mehr, seine
                             Schriften von fonts.gstatic und seine JavaScript-Bibliothken von MaxCDN zu laden. Das verteilt völlig
                             ohne Anlass Informationen an Dritte weiter, die weder mit euch noch mit euren Nutzerinnen zu tun
                             haben sollten.
 
+                            </p>
+                            <p>
                             Das zweite Konzept hört sich fast (aber nur fast ;)) widersprüchlich dazu an, nämlich: Verwendet
                             Bibliotheken, wo es angemessen ist. Klar, Bibliotheken sind auch externe Inhalte, aber oft gute
                             und nützliche: Da haben sich Leute oft über Jahre Gedanken und Mühe gemacht, und haben Fehlerberichte
@@ -214,6 +259,7 @@
                             ihr solltet selbstverständlich nichts ohne vorherige Recherche nutzen – das ist immerhin Code, den
                             ihr in eurem Projekt ausführt!
                             Und: Legt eigene Kopien/Forks/whatever von diesen Bibliotheken an, und nutzt fixe Versionen.
+                            </p>
                         </aside>
                     </section>
                     <section class="2-2-backend">
@@ -230,58 +276,84 @@
                             </li>
                         </ul>
                         <aside class="notes">
+                            <p>
                             Backend-spezifische Implementierungskonzepte befassen sich vor allem damit, nicht versehentlich
                             Daten anzuzeigen, die nicht angezeigt werden sollten.
 
+                            </p>
+                            <p>
                             Dazu gehört zu allererst: Graceful Degradation. Wenn Fehler auftreten, fangt sie ab. Und leitet auf
                             gar keinen Fall Serverfehler, am Ende gar Stack-Traces an die Nutzerinnen, egal wie schlimm der Server
                             kaputt geht. Stacktraces sind nie für Nutzeraugen bestimmt. Rechnet *immer* damit, dass es aufgrund
                             von Fehlern im Code oder den Eingabedaten zu Problemen kommen kann, und misstraut dabei natürlich
                             ganz besonders allen Nutzereingaben.
 
+                            </p>
+                            <p>
                             Als zweite Hilfe gegen die Ausgabe von Daten, wo sie nicht hingehören, verwendet ihr im Backend
                             so viel, so früh, und so ausufernd wie möglich sogenannten Scoped Data Access einzusetzen. Das
                             bedeutet: so früh wie möglich die Daten einschränken, auf denen gearbeitet wird. Zu Beginn im
                             üblichen Request-Response-Zyklus ist ja der angemeldete Useraccount bekannt – ab diesem Zeitpunkt
                             kann also das Datenset, auf dem gearbeitet wird, auf der Nutzerin zugängliche Daten reduziert werden.
 
+                            </p>
+                            <p>
                             Und: Loggt! Loggt natürlich alles, was ihr ohnehin an buchungsrelevanten Daten loggen müsst.
                             Loggt aber auch Zugriffe auf sensible Daten. Wenn ihr die Zeit habt, da dann noch nachträglich
                             nach auffälligen Zugriffen zu gucken, ist das natürlich optimal, aber selbst wenn ihr nur nach
                             einem Breach oder dem Fund eines Bugs gucken könnt, ob eine Lücke ausgenutzt wurde, habt ihr viel
                             gewonnen.
+                            </p>
                         </aside>
                     </section>
                     <section class="2-3-frontend">
-                        <h3>Fontend</h3>
+                        <h3>Frontend</h3>
                         <ul>
                             <li class="fragment">
-
+                                [x] Ja, ich habe die <a href="#">Nutzungsbedingungen</a> total gelesen und möchte den Spamnewsletter bestellen.
                             </li>
                             <li class="fragment">
-                                Scoped Access
+                                »Hi! Sag mal, was ist deine Adresse?!«
                             </li>
                         </ul>
                         <aside class="notes">
+                            <p>
                             In Sachen Fontendentwicklung werdet ihr natürlich die Implementierungskonzepte in Sachen reduzierte
                             Datenanfragen und klare Einwilligung in Datennutzung umsetzen müssen. Zur Hilfe gibt es da aber auch
                             ein, zwei Regeln, die man vage im Hinterkopf behalten kann.
+                            </p>
+                            <p>
 
                             Zum Einen: fragt nicht an Stellen um Erlaubnis, an denen ihr das nicht müsst, an denen es nichts
                             zur Information beiträgt, oder an denen ein Opt-In verpflichtend ist. Gestaltet solche Situationen
                             entweder informativ ("Diese Adresse werden wir x Monate aufbewahren") oder bietet *echte* Alternativen
                             an. Nervt auch die Nutzerinnen weniger.
+                            </p>
+                            <p>
 
                             Zweitens: Fragt so spät wie möglich nach Inputs, und stellt sehr klar hin, welche davon benötigt sind.
                             Das ist auch für die Bedienbarkeit ein deutlicher Gewinn – ich bleibe einer Webseite deutlich geneigter,
                             wenn sie mich nicht als allererstes nach meiner Adresse, meinem Geburtsdatum, und meinen Hausschlüsseln
                             fragt und mich informiert, dass ich ihre Privacy Policy sicher gelesen habe.
                             (Und natürlich *ist* sie ein Date, denn jede Webanwendung löst ja am Ende ein soziales Problem.)
+                            </p>
                         </aside>
                     </section>
                     <section class="2-4-issues">
                         <h3>Häufige Fehler</h3>
+                        <ul>
+                            <li class="fragment">
+                                Little Bobby Tables
+                            </li>
+                            <li class="fragment">
+                                … and his friends
+                            </li>
+                            <li class="fragment">
+                                Session timeouts
+                            </li>
+                        </ul>
                         <aside class="notes">
+                            <p>
                             Als allererstes möchte ich euch darauf aufmerksam machen, dass ich nicht den xkcd "Little Bobby Tables"
                             zu SQL-Injections zeige – aber natürlich geht es hier um genau solche Fehler. Ich möchte das hier
                             kurz halten und euch hier die Tob-10 OWASP-Liste ans Herz legen. Geht sie regelmäßig durch, prüft eure
@@ -289,6 +361,7 @@
                             mehr mit Injections, Cross-Site-Scripting, enumerierbaren privaten Daten, etc abgeben müssen.
                             Zu den häufigen Fehlern gehört übrigens auch ein zu hoher Session-Timeout – deutlich weniger oft
                             angemahnt, und deshalb weniger präsent.
+                            </p>
                         </aside>
                     </section>
                     <section class="2-5-tests">
@@ -308,21 +381,29 @@
                             </li>
                         </ul>
                         <aside class="notes">
+                            <p>
                             Tests. Eine Webanwendung von nicht komplett trivialer Größe ohne Tests zu bauen, ist sträflich nachlässig.
                             Schreibt Tests, und schreibt sie von Anfang an. Guckt euch gelegentlich an, wie hoch eure Test Coverage ist
                             (also wie viele Codezeilen getestet sind), aber seid euch bewusst, dass das eine sehr simple und nachlässige
                             Metrik ist.
 
+                            </p>
+                            <p>
                             Lasst eure Tests automatisch laufen, und ignoriert die Ergebnisse nicht. Wenn die Tests rot werden, dann
                             repariert sie oder – wenn das gerade nicht geht – markiert sie als beabsichtigte Fehler. Nichts ist nutzloser
                             als eine Testsuite, deren Ergebnisse nicht mehr angesehen werden, weil man ja weiß, warum sie rot ist.
 
+                            </p>
+                            <p>
                             Testet mit Unittests für einzelne Funktionen, und Integrationstests für ganze Features und Abläufe.
                             Testet ganz besonders Zugriffsberechtigungen! Falls es mit eurer Sprache, eurem Framework, … machbar ist,
                             beschäftigt euch mal mit automatisiertem Abklopfen eures Codes durch externe Tools.
 
+                            </p>
+                            <p>
                             Und wo wir bei Externen sind: Wenn es irgendwie machbar ist, besorgt euch einen Pentest von Profis. Nichts
                             ersetzt frische Augen von Menschen, die ihr Geld damit machen, Sicherheitslücken in eurer Software zu finden.
+                            </p>
                         </aside>
                     </section>
                 </section>
@@ -330,93 +411,129 @@
                     <section class="3-0-betrieb">
                         <h2>Betrieb</h2>
                         <aside class="notes">
+                            <p>
                             Nun ist es ja leider mit dem Implementieren nicht getan – selbst wenn die Implementierung super ist, haben
                             wir jetzt Jahre Zeit, alles ausdauernd wieder einzureißen, denn zum Lebenszyklus einer Webanwendung gehört
                             ja zum allergrößten Teil (wenn man nicht nur so ein One-Click-Wonder ist) der Betrieb und die Wartung.
 
+                            </p>
+                            <p>
                             Von Dingen, die da schief gehen, liest man ja monatlich in den Nachrichten – selten heißt es da "die
                             Anwendung war schlecht konzipiert", viel häufiger heißt es "Die Datenbank war mit den Credentials admin/admin
                             zugänglich". Was tun?
+                            </p>
                         </aside>
                     </section>
                     <section class="3-1-monitoring">
                         <h3>Monitoring</h3>
                         <aside class="notes">
+                            <p>
                             Als fast dringendes braucht ihr gutes Monitoring. Monitoring in irgendeiner Form habt ihr ja schon,
                             nicht wahr? Und wenn es nur eure Uptime und den verfügbaren Plattenspeicher ansieht (hach, icinga-Templates).
                             Nutzt die Gelegenheit, noch viel mehr Dinge zu prüfen. Prüft, ob euer HTTPS tut, das Zertifikat aktuell
                             ist, die korrekten Versionen und Ciphers angeboten werden.
+                            </p>
+                            <p>
 
                             Prüft, dass nur die wirklich nötigen Ports des Servers offen sind. Macht euch in dem Zug gleich mit
                             den Best Practices des Server-Hardenings vertraut.
+                            </p>
+                            <p>
 
                             Prüft, dass kritische Systeminfrastruktur aktuell ist.
+                            </p>
+                            <p>
 
                             Prüft, dass ihr TLS wirklich überall verwendet – HTTPS überall zu nutzen sollte Standard sein, aber
                             kommunizieren z.B. eure Websockets auch verschlüsselt?
+                            </p>
                         </aside>
                     </section>
                     <section class="3-2-logging">
                         <h3>Logging</h3>
                         <aside class="notes">
+                            <p>
                             Loggt Zugriffe auf sensible Daten. Loggt logins. Selbst wenn ihr diese Logs nur nach einem Vorfall nutzt,
                             um die Vorgänge nachzuvollziehen, habt ihr viel zu tun, verglichen mit einem Vorfall, nach dem ihr
                             völlig im Dunklen tappt, was da auf euren Servern los war.
+                            </p>
+                            <p>
                             Und sichert die relevanten Logs, ganz besonders auch die Logs, die eure Webanwendung ohnehin ausspuckt!
+                            </p>
                         </aside>
                     </section>
                     <section class="3-3-backups">
                         <h3>Backups</h3>
                         <aside class="notes">
+                            <p>
                             Woooomit wir beim spannendsten Thema überhaupt ankommen: Backups! Ihr macht ja alle Backups, regelmäßig,
                             und testet sicherlich auch eure Restore-Prozeduren, nicht wahr? Ihr wisst ja, ein Backup ohne Restore
                             ist ein Scherbenhaufen aus Bits, mehr nicht. Über solche Grundlagen muss man ja quasi nicht reden.
+                            </p>
+                            <p>
 
                             Seid euch immer dessen bewusst, dass eure Backupdaten *mindestens* so sicherheitskritisch sind, wie eure
                             Live-Datenbank. Das bedeutet: Alles, was wir über den Anwendungsserver gesagt haben, gilt auch für eure
                             Backup-Server. (Plural. Stimmts?). Sichert den so hart ab, wie ihr es irgend könnt. Wenn da jemand unbefugt
                             drauf zugreift, habt ihr ziemlich verloren. Wenn eure Backups da dann noch unverschlüsselt liegen …
+                            </p>
+                            <p>
 
                             Und entsprechend muss übrigens auch der Kanal zwischen eurem Anwendungsserver und euren Backupservern
                             gesichert ist, unter SSH/TLS solltet ihr da gar nicht anfangen (im besten Fall steht da natürlich ein VPN).
+                            </p>
                         </aside>
                     </section>
                     <section class="3-4-incidence-response">
                         <h3>Incidence Response</h3>
                         <small>… wenn's schief geht</small>
-                        <aside class="hooks">
+                        <aside class="notes">
+                            <p>
                             Und das wichtigste im laufenden Betrieb: Wenn alles schief gegangen ist, wenn die Daten geleaked
                             sind, braucht es gute Incidence Response. Und die ist kein Zufall, die will vorbereitet sein.
+                            </p>
+                            <p>
 
                             Habt ihr schon mal bei einer Website nach deren Datenschutz gefragt? Oder einen Vorfall gemeldet?
                             Das ist meist … gar kein so leichtes Unterfangen. Wenn man sich an den Support wendet, wird man
                             im besten Fall weitergereicht, aber im Normalfall passiert eher nichts.
+                            </p>
+                            <p>
 
                             In meiner Erfahrung funktionieren Adressen wie webmaster@, root@, admin@ ganz gut. Dazu sollte man
                             seine Meldung natürlich noch gelassen, sachlich und nicht konfrontativ formulieren. Wer mit
                             "Einmal mit Profis ey, was könnt ihr eigentlich?" angeschrieben wird, kooperiert eher weniger.
                             Wer hätts gedacht.
+                            </p>
+                            <p>
 
                             Es braucht mindestens Ansprechpartner, eine Kontaktadresse, und definiertes Vorgehen in diversen
                             Szenarien. Bitte, bitte, bitte, wenn ihr für eine Webanwendung mit Userdaten, die jetzt im Internet
                             läuft, Verantwortung habt, und ihr habt kein Vorgehen für Vorfälle, bei denen euch Daten abhanden
                             gekommen sind – schafft sie jetzt.
+                            </p>
+                            <p>
 
                             Wie für alle Teile des Vortrags gibt es da Best Practices, die hier aufzuführen ausarten würde.
                             Aber am wichtigsten: ihr macht euch Gedanken drum. Bitte.
+                            </p>
                     </section>
                 </section>
                 <section class="4-fin">
                         <h3>Fin.</h3>
                         <aside class="notes">
+                            <p>
                             So, das wars – wir sind einmal durch alles, was zur Planung, Implementierung und dem Betrieb einer
                             Webanwendung hinsichtlich des Datenschutzes gehört.
-
+                            </p>
+                            <p>
                             Das ist natürlich gelogen, wir haben grad erst an der Oberfläche gekratzt, aber wie geschrieben
                             steht: »Er hat sich im Rahmen seiner Möglichkeiten bemüht.«
-
+                            </p>
+                            <p>
                             Ich hoffe, ihr nehmt hiervon wenigstens einen oder zwei Punkte mit, und macht das Internet zu einem
                             etwas besseren Ort.
+                            </p>
                         </aside>
                 </section>
             </div>

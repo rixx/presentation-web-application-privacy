@@ -2,3 +2,12 @@ aside .block {
   margin-bottom: 200px;
   padding-bottom: 200px;
 }
+.quote {
+  padding: 16px 8px !important;
+  margin: 16px;
+  border: 6px solid !important;
+  background: #444;
+  font-size: 14pt;
+  font-style: italic;
+  width: 100%;
+}
