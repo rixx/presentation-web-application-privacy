@@ -392,16 +392,16 @@
                         <h3>Tests</h3>
                         <ul>
                             <li class="fragment">
-                                Testet Code
+                                Testet!
                             </li>
                             <li class="fragment">
                                 Testet automatisch
                             </li>
                             <li class="fragment">
-                                Testet mehr
+                                Testet sicher
                             </li>
                             <li class="fragment">
-                                Testet durch Externe
+                                Testet mehr
                             </li>
                         </ul>
                         <aside class="notes">
@@ -416,6 +416,7 @@
                             Lasst eure Tests automatisch laufen, und ignoriert die Ergebnisse nicht. Wenn die Tests rot werden, dann
                             repariert sie oder – wenn das gerade nicht geht – markiert sie als beabsichtigte Fehler. Nichts ist nutzloser
                             als eine Testsuite, deren Ergebnisse nicht mehr angesehen werden, weil man ja weiß, warum sie rot ist.
+                            Jenkins, Travis, GitLab CI
 
                             </p>
                             <p>
@@ -424,6 +425,11 @@
                             beschäftigt euch mal mit automatisiertem Abklopfen eures Codes durch externe Tools.
 
                             </p>
+                        </aside>
+                    </section>
+                    <section class="2-5-audit">
+                        <h3>Audit</h3>
+                        <aside class="notes">
                             <p>
                             Und wo wir bei Externen sind: Wenn es irgendwie machbar ist, besorgt euch einen Pentest von Profis. Nichts
                             ersetzt frische Augen von Menschen, die ihr Geld damit machen, Sicherheitslücken in eurer Software zu finden.
@@ -440,6 +446,10 @@
                             wir jetzt Jahre Zeit, alles ausdauernd wieder einzureißen, denn zum Lebenszyklus einer Webanwendung gehört
                             ja zum allergrößten Teil (wenn man nicht nur so ein One-Click-Wonder ist) der Betrieb und die Wartung.
 
+                            </p>
+                            <p>
+                            Die üblichen Regeln der Kunst müsst ihr natürlich einhalten:
+                            Vor allem TLS überall. HTTPS, Websockets.
                             </p>
                             <p>
                             Von Dingen, die da schief gehen, liest man ja monatlich in den Nachrichten – selten heißt es da "die
@@ -466,17 +476,16 @@
 
                             Prüft, dass kritische Systeminfrastruktur aktuell ist.
                             </p>
-                            <p>
-
-                            Prüft, dass ihr TLS wirklich überall verwendet – HTTPS überall zu nutzen sollte Standard sein, aber
-                            kommunizieren z.B. eure Websockets auch verschlüsselt?
-                            </p>
                         </aside>
                     </section>
                     <section class="3-2-logging">
                         <h3>Logging</h3>
                         <aside class="notes">
                             <p>
+                            Zu allererst: loggt korrekt. Das bedeutet: auch hier gilt
+                            Datensparsamkeit. Loggt keine IP-Adressen, ganz alleine schon,
+                            weil ihrs nicht dürft.
+                            </p>
                             Loggt Zugriffe auf sensible Daten. Loggt logins. Selbst wenn ihr diese Logs nur nach einem Vorfall nutzt,
                             um die Vorgänge nachzuvollziehen, habt ihr viel zu tun, verglichen mit einem Vorfall, nach dem ihr
                             völlig im Dunklen tappt, was da auf euren Servern los war.
@@ -488,6 +497,20 @@
                     </section>
                     <section class="3-3-backups">
                         <h3>Backups</h3>
+                        <ul>
+                            <li class="fragment">
+                                Backupt!
+                            </li>
+                            <li class="fragment">
+                                Backupt automatisch
+                            </li>
+                            <li class="fragment">
+                                Backupt sicher
+                            </li>
+                            <li class="fragment">
+                                Backupt mehr
+                            </li>
+                        </ul>
                         <aside class="notes">
                             <p>
                             Woooomit wir beim spannendsten Thema überhaupt ankommen: Backups! Ihr macht ja alle Backups, regelmäßig,
